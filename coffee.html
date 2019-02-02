@@ -55,20 +55,65 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage;
-    const revenueMessage;
+const coffeeImage = document.querySelector('#coffee-image');
+coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
 
-    // use this JavaScript object in further study step
-
-    const prices = {
-      'brew': 2.05,
-      'espresso': 3.25,
-      'latte': 4.15,
-      'hot chocolate': 2.50
-    };
+function makeCoffee() {
+  coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
 
 
-  </script>
+
+  // setTimeout( () => {
+  //   coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+  // }, 1500);
+
+  // setTimeout( () => {
+  //   coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+  // }, 2500);
+
+  function setCoffeeBeans() {
+    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+  }
+  
+  function setCoffeeMug(){
+    coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    setTimeout(setCoffeeBeans, 2500);
+  }
+  setTimeout(setCoffeeMug, 1500);
+
+
+
+
+  // setTimeout(setCoffeeBeans, 2500);
+
+
+
+  // coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+
+  // setTimeout( () => {
+  //   console.log('second timeout');
+  //   coffeeImage.setAttribute('src', 'static/coffee_machine.jpg')
+  // }, 1500);
+
+  // coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+  // setTimeout( () => console.log('timeout'), 3000 );
+}
+coffeeImage.addEventListener('click', makeCoffee);
+
+
+// const revenueMessage;
+
+// use this JavaScript object in further study step
+
+const prices = {
+  'brew': 2.05,
+  'espresso': 3.25,
+  'latte': 4.15,
+  'hot chocolate': 2.50
+};
+
+
+</script>
 
 </body>
 </html>
